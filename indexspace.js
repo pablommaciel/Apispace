@@ -52,7 +52,7 @@ setInterval(() => {
   });
 }, 3000);  // Executa a cada 3 segundos
 
-app.get('/space-results', (req, res) => {
+app.get('/game-results', (req, res) => {
   res.json({ results: buffer });
 });
 
