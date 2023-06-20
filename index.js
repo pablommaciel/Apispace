@@ -4,9 +4,9 @@ const app = express();
 
 const connection = mysql.createConnection({
   host: '185.239.210.154',
-  user: 'u625977176_XicoAviator',
-  password: 'Pp135198000',
-  database: 'u625977176_XicoAviator',
+  user: 'u625977176_pingolbet',
+  password: 'Ppp135198000',
+  database: 'u625977176_pingolbet',
   connectTimeout: 60000,
   charset: 'utf8mb4'
 });
@@ -25,7 +25,7 @@ let buffer = null;
 
 setInterval(() => {
   console.log('Verificando atualizações...');
-  connection.query('SELECT * FROM dragontiger ORDER BY ID DESC LIMIT 1', (err, rows) => {
+  connection.query('SELECT * FROM spaceman ORDER BY ID DESC LIMIT 1', (err, rows) => {
     if(err) {
       console.error('Erro ao consultar o banco de dados: ', err);
       return;
@@ -52,10 +52,10 @@ setInterval(() => {
   });
 }, 3000);  // Executa a cada 3 segundos
 
-app.get('/game-results', (req, res) => {
+app.get('/space-results', (req, res) => {
   res.json({ results: buffer });
 });
 
-app.listen(3001, () => {
+app.listen(3002, () => {
   console.log('App ouvindo na porta 3000');
 });
